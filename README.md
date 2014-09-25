@@ -1,4 +1,4 @@
 godeep
 ======
 
-"go(業)" means Karma in Japanese. 
+私たちの"go(業)"をシェアして深めよう!
