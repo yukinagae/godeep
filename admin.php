@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>hoge</title>
+        <title></title>
     </head>
     <body>
         Hello
