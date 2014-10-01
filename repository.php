@@ -20,14 +20,12 @@ class FileRepo {
 
 	function __construct($d) {
 		$this->dir = getcwd() . "\\" . $d;
-		print($this->dir);
     }
 
 	public function save($p) {
 		$s_p = serialize($p);
 		$file = $p->title;
 		$current = file_get_contents($this->dir . "\\" . $file);
-		print($current);
 		$current = $s_p;
 		file_put_contents($this->dir . "\\" . $file, $current);
 		return $p;
@@ -38,6 +36,20 @@ class FileRepo {
 		$current = file_get_contents($this->dir . "\\" . $file);
 		$d_p = unserialize($current);
 		return $d_p;
+	}
+
+	function get_ist() {
+		$list = [];
+		if ($handle = opendir($this->dir)) {
+		 	while (false !== ($file = readdir($handle))) {
+		 		if($file !== "." && $file !== "..") {
+        			$p = $this->read($file);
+        			array_push($list, $p);
+		 		}
+    		}
+    		closedir($handle);
+		}
+		return $list;
 	}
 }
 
@@ -71,7 +83,8 @@ class Repository {
 	}
 
 	public function all() {
-		return $array;
+		$ps = $this->repo->get_ist();
+		return $ps;
 	}
 }
 
@@ -84,3 +97,5 @@ class Repository {
 // $r->delete($p);
 // $p1 = $r->find("title1");
 // print_r($p1);
+// $ps = $r->all();
+// print_r($ps);
