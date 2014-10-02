@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>不平不満</title>
@@ -12,17 +12,18 @@
 </head>
 <body>
     <div>
-        <h1>眠い</h1>
+        <h1>じゅんちゃん</h1>
         <div>
             <p>ちょまてょ</p>
-            <button type="button" class="btn btn-default" id="bad"><span class="glyphicon glyphicon-thumbs-down"> 悪イイネ!!</span></button>
+            <button type="button" class="btn btn-default" id="bad"><span class="glyphicon glyphicon-thumbs-down"> 悪イイネ!!</span><span class="glyphicon glyphicon-plus"></span></button>
+            <p id="result">0</p>
         </div>
     </div>
     <div>
         <form action="" method="POST">
             <p>
 			TITLE: <input type="text" name="title" size="40" maxlength="20"><br>
-			TEXT: <textarea rows="5" cols="40" id="result"></textarea><br>
+			TEXT: <textarea rows="3" cols="42" id="result"></textarea><br>
 			<button type="button" class="btn btn-default" id="commit"><span class="glyphicon glyphicon-asterisk"> 投稿やで!</span></button>
 			<!--
 			<input type="submit" name="commit" value="投稿やで!"><span class="glyphicon glyphicon-fire"></span>
@@ -30,5 +31,20 @@
 			</p>
         </form>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+	    var len = 0;
+        $(function(){
+        	$('#bad').click(function(){
+        		len += 1;
+        		$('#result').text(len);
+        	});
+        });
+        $(function(){
+        	$('#commit').click(function(){
+		        var answer = confirm("正気か!?");
+        	});
+        });
+    </script>
 </body>
 </html>
