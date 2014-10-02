@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>不平不満</title>
+    <meta charset="UTF-8">
+    <title>不平不満</title>
+    <style>
+        body{text-align: center;}
+    </style>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div>
         <h1>眠い</h1>
-        <div>ちょまてよ</div>
-        <button id="bad">悪いね</button>
+        <div>
+            <p>ちょまてょ</p>
+            <button type="button" class="btn btn-default" id="bad"><span class="glyphicon glyphicon-thumbs-down"> 悪イイネ!!</span></button>
+        </div>
+    </div>
+    <div>
+        <form action="" method="POST">
+            <p>
+			TITLE：<input type="text" name="title" size="40" maxlength="20"><br>
+			TEXT:<textarea rows="5" cols="40" id="result"></textarea><br>
+			<button type="button" class="btn btn-default" id="commit"><span class="glyphicon glyphicon-asterisk"> 投稿やで!</span></button>
+			<!--
+			<input type="submit" name="commit" value="投稿やで!"><span class="glyphicon glyphicon-fire"></span>
+			-->
+			</p>
+        </form>
     </div>
 </body>
 </html>
