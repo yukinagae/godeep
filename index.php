@@ -36,7 +36,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9">
-            <table class="table">
+            <span class="glyphicon glyphicon-search"></span>
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>id</th>
